@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>711</width>
+    <height>298</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MNT et Inondation</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutMenu">
+        <item>
+         <widget class="QLineEdit" name="vitesse">
+          <property name="inputMask">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="precision"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="valider">
+          <property name="text">
+           <string>Valider</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="MondeViewer" name="widget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOuvrir"/>
+   <addaction name="separator"/>
+   <addaction name="actionInondation"/>
+   <addaction name="actionPause"/>
+   <addaction name="actionReset"/>
+   <addaction name="separator"/>
+   <addaction name="actionIsoligne"/>
+   <addaction name="actionEffacer"/>
+   <addaction name="actionSauver"/>
+   <addaction name="separator"/>
+   <addaction name="actionSol"/>
+   <addaction name="actionEau"/>
+   <addaction name="actionVagues"/>
+   <addaction name="actionCiel"/>
+   <addaction name="actionMNT"/>
+   <addaction name="separator"/>
+   <addaction name="actionCouleurs_Textures"/>
+   <addaction name="actionVBO"/>
+  </widget>
+  <action name="actionOuvrir">
+   <property name="text">
+    <string>Ouvrir</string>
+   </property>
+   <property name="toolTip">
+    <string>Ouvrir un fichier .xyz</string>
+   </property>
+   <property name="shortcut">
+    <string>O</string>
+   </property>
+  </action>
+  <action name="actionInondation">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Inondation</string>
+   </property>
+   <property name="toolTip">
+    <string>Lancer la montée des eaux</string>
+   </property>
+   <property name="shortcut">
+    <string>L</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="toolTip">
+    <string>Stopper la monter des eaux</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Reset</string>
+   </property>
+   <property name="toolTip">
+    <string>Remettre à zéro</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionIsoligne">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Isoligne</string>
+   </property>
+   <property name="toolTip">
+    <string>Calculer l'isoligne pour la hauteur d'eau actuelle</string>
+   </property>
+  </action>
+  <action name="actionVBO">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>VBO</string>
+   </property>
+   <property name="toolTip">
+    <string>Utiliser les VBO</string>
+   </property>
+  </action>
+  <action name="actionVagues">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Vagues</string>
+   </property>
+   <property name="toolTip">
+    <string>Afficher des vagues sur l'eau</string>
+   </property>
+  </action>
+  <action name="actionSol">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sol</string>
+   </property>
+   <property name="toolTip">
+    <string>Afficher le sol</string>
+   </property>
+  </action>
+  <action name="actionEau">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Eau</string>
+   </property>
+   <property name="toolTip">
+    <string>Afficher l'eau</string>
+   </property>
+  </action>
+  <action name="actionMNT">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>MNT</string>
+   </property>
+   <property name="toolTip">
+    <string>Afficher le MNT</string>
+   </property>
+  </action>
+  <action name="actionCiel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Ciel</string>
+   </property>
+   <property name="toolTip">
+    <string>Afficher le Ciel</string>
+   </property>
+  </action>
+  <action name="actionCouleurs_Textures">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Couleurs/Textures</string>
+   </property>
+   <property name="toolTip">
+    <string>Inverser Textures/Couleurs</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionSauver">
+   <property name="text">
+    <string>Sauver</string>
+   </property>
+   <property name="toolTip">
+    <string>Sauver l'isoligne</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionEffacer">
+   <property name="text">
+    <string>Effacer</string>
+   </property>
+   <property name="toolTip">
+    <string>Effacer l'isoligne</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MondeViewer</class>
+   <extends>QWidget</extends>
+   <header>mondeviewer.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
