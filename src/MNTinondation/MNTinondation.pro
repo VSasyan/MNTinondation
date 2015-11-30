@@ -36,7 +36,7 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 unix {
-    LIBS += -lQGLViewer
+    LIBS += -lQGLViewer -lGLU
 }
 macx {
     QMAKE_LFLAGS += -F/Library/Frameworks

@@ -41,6 +41,6 @@ void ThreadOuvrirMNT::run() {
         emit terminated();
     } else {emit result(-1000);}
 
-    this->terminate();
+    //this->terminate();
     //this->wait();
 }
